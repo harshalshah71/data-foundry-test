@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  WeatherDataStoreBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: harshal-weatherstore-lambda-weather-data-store
+
+  WeatherDataFetchLambdaFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      FunctionName: get_weather_data
+      Runtime: python3.9
+      Handler: index.handler
+      Role: 'arn:aws:iam::699935005481:role/service-role/get_weather_data-role-s5qig2ak'
+      Code:
+        S3Bucket: 'lambda-weather-data-store'
+        S3Key: 'get_weather_data-2d1cdf2d-0af8-403e-a594-e8b108008fa2.zip'
+        
+Outputs:
+  WeatherDataStoreBucketName:
+    Value: !Ref WeatherDataStoreBucket
