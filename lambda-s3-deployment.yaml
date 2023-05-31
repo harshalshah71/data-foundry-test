@@ -10,7 +10,7 @@ Resources:
     Properties:
       FunctionName: get_weather_data
       Runtime: python3.9
-      Handler: get_weather_data.lambda_handler
+      Handler: lambda_function.lambda_handler
       Role: 'arn:aws:iam::699935005481:role/service-role/get_weather_data-role-s5qig2ak'
       Code:
         S3Bucket: 'lambda-weather-data-store'
