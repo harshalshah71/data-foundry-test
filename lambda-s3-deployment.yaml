@@ -3,7 +3,7 @@ Resources:
   WeatherDataStoreBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: s3-bckt-lambda-weather-data-store
+      BucketName: lambda-weather-data-store
 
   WeatherDataFetchLambdaFunction:
     Type: 'AWS::Lambda::Function'
